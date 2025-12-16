@@ -34,9 +34,10 @@ import tschipp.carryon.common.carry.CarryOnDataManager;
 @Mixin(Screen.class)
 public class ScreenMixin
 {
-	@Inject(at = @At(value = "TAIL"), method = "init(Lnet/minecraft/client/Minecraft;II)V")
-	private void onInit(Minecraft mc, int i, int j, CallbackInfo ci)
+	@Inject(at = @At(value = "TAIL"), method = "init(II)V")
+	private void onInit(int i, int j, CallbackInfo ci)
 	{
+		Minecraft mc = Minecraft.getInstance();
 		Player player = mc.player;
 		if((Object)this instanceof AbstractContainerScreen && player != null)
 		{

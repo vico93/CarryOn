@@ -27,7 +27,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import tschipp.carryon.CarryOnFabricClientMod;
@@ -90,13 +90,13 @@ public class FabricPlatformHelper implements IPlatformHelper {
     }
 
     @Override
-    public void sendPacketToServer(ResourceLocation id, PacketBase packet)
+    public void sendPacketToServer(Identifier id, PacketBase packet)
     {
         CarryOnFabricClientMod.sendPacketToServer(packet);
     }
 
     @Override
-    public void sendPacketToPlayer(ResourceLocation id, PacketBase packet, ServerPlayer player)
+    public void sendPacketToPlayer(Identifier id, PacketBase packet, ServerPlayer player)
     {
         ServerPlayNetworking.send(player, packet);
     }

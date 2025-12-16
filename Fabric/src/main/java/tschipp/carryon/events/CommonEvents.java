@@ -33,7 +33,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.level.GameRules;
+import net.minecraft.world.level.gamerules.GameRules;
 import tschipp.carryon.CarryOnCommon;
 import tschipp.carryon.common.carry.CarryOnData;
 import tschipp.carryon.common.carry.CarryOnData.CarryType;
@@ -137,7 +137,7 @@ public class CommonEvents {
             if (!(entity instanceof ServerPlayer)) return;
             var player = (ServerPlayer) entity;
             var carry = CarryOnDataManager.getCarryData(player);
-            if (carry.isCarrying(CarryType.PLAYER) || !player.level().getGameRules().getBoolean(GameRules.RULE_KEEPINVENTORY)) PlacementHandler.placeCarried(player);
+            if (carry.isCarrying(CarryType.PLAYER) || !player.level().getGameRules().get(GameRules.KEEP_INVENTORY)) PlacementHandler.placeCarried(player);
         });
 
 

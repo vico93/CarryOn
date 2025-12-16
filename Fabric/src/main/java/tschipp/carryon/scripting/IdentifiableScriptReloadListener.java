@@ -21,15 +21,15 @@
 package tschipp.carryon.scripting;
 
 import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import tschipp.carryon.Constants;
 import tschipp.carryon.common.scripting.ScriptReloadListener;
 
 public class IdentifiableScriptReloadListener extends ScriptReloadListener implements IdentifiableResourceReloadListener
 {
 	@Override
-	public ResourceLocation getFabricId()
+	public Identifier getFabricId()
 	{
-		return ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "carryon_scripts");
+		return Identifier.fromNamespaceAndPath(Constants.MOD_ID, "carryon_scripts");
 	}
 }

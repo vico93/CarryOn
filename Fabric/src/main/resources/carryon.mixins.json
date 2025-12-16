@@ -1,0 +1,25 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "tschipp.carryon.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "EntityMixin",
+    "InventoryMixin",
+    "PlayerMixin"
+  ],
+  "client": [
+    "HumanoidModelMixin",
+    "MinecraftMixin",
+    "PlayerRenderStateMixin",
+    "EntityRendererMixin",
+    "AvatarRendererMixin"  
+  ],
+  "server": [
+  ],
+  "plugin": "tschipp.carryon.mixin.CarryOnMixinConfigPlugin",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "${mod_id}.refmap.json"
+}
